@@ -1,15 +1,13 @@
-char letra;
-String nombre;
+import javax.swing.JOptionPane;
+String nombreUsuario;
+
+void setup(){
+darMensaje();
+}
 
 void draw(){
 }
-
-void keyTyped() {
-  if ((key >= 'A' && key <= 'z') || key == ' ') {
-    letra = key;
-    nombre = nombre + key;
-    println(key);
-} else if(key == ENTER){
-  println("Hola "+ nombre);
-  }
+void darMensaje(){
+nombreUsuario = JOptionPane.showInputDialog("¿Cuál es tu nombre?");
+JOptionPane.showMessageDialog(null, "Hola " + nombreUsuario);
 }
