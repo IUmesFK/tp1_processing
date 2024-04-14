@@ -9,14 +9,14 @@ void setup(){
 }
 
 void draw(){
-  dibRect();
+  dibujarRectangulo();
 }
 
-void dibRect(){
+void dibujarRectangulo(){
   for(float y = posicion.y; y<height; y+=40){
     for(float x = posicion.x; x<=width; x+=60){
       fill(255, 0 ,0);
-      rect(x, y, 40, 20);
+      rect(x, y, anchoRect, altoRect);
     }
   }
 }
