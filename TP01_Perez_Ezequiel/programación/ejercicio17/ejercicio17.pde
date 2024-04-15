@@ -12,11 +12,13 @@ void draw(){
   linkMov();
   display();
   calcularDistancia();
+  encontrarTesoro();
 }
 
 void display(){
   fill(#35612D);
   circle(link.x,link.y, 20);
+  noStroke();
   fill(#ECAB0F);
   rectMode(CENTER);
   rect(tesoro.x, tesoro.y, 40, 40);
@@ -29,8 +31,19 @@ void linkMov(){
 void calcularDistancia(){
   distancia = dist(link.x, link.y, tesoro.x, tesoro.y);
   println("La distancia es " + distancia);
-  if(distancia < 20){
+  if(distancia <=20){
     println("Felicidades, encontraste el tesoro");
+  }
+}
+
+void encontrarTesoro(){
+  if(distancia>0 && distancia<=20){
+    noStroke();
+    fill(#ADE8F4);
+    rectMode(CENTER);
+    rect(tesoro.x, tesoro.y, 40, 40);
+    fill(#35612D);
+    circle(link.x,link.y, 20);
   }
 }
 
